@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Bus Safety System Check list</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=아니오"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script>
+      function car_list() {
+        location.href = "/car_list/";
+      }
+      function main() {
+        location.href = "/main";
+      }
+    </script>
+  </head>
+  <body class="is-preload" onload="menuload();">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+          <!-- Header -->
+          <header id="header">
+            <a class="logo" href="/home">Bus <strong>Safety</strong> System</a>
+            <ul class="icons">
+              <li>
+                <a href="#" class="icon brands fa-twitter"
+                  ><span class="label">Twitter</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-facebook-f"
+                  ><span class="label">Facebook</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-snapchat-ghost"
+                  ><span class="label">Snapchat</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-instagram"
+                  ><span class="label">Instagram</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-medium-m"
+                  ><span class="label">Medium</span></a
+                >
+              </li>
+            </ul>
+          </header>
+
+          <!-- Content -->
+          <section>
+            <form method="post" action="/confirm">
+              <header class="main">
+                <h1 id="check_list_header">체크리스트</h1>
+              </header>
+              <div id="check_list_division">
+                <span id="check_list_division1"
+                  >차량 번호:
+                  <input
+                    name="car_id"
+                    value="<%=carinfo[0].car_id%>"
+                    readonly />
+                  <strong></strong></span
+                ><span id="check_list_division2"
+                  >차량 소속:
+                  <input
+                    name="car_div"
+                    value="<%=carinfo[0].car_div%>"
+                    readonly />
+                  <strong></strong
+                ></span>
+              </div>
+              <br />
+              <div>
+                <table class="alt">
+                  <tr>
+                    <td id="check_list_TableHead1">check1</td>
+                    <td id="check_list_TableHead2">
+                      승객이 이용하는 시설은 깨끗합니까?
+                    </td>
+                    <td id="check_list_TableHead3">
+                      <input
+                        type="radio"
+                        id="check1"
+                        name="check1"
+                        value="t"
+                        checked
+                      />
+                      <label for="check1" id="check_list_label">예</label>
+                      <input type="radio" id="check2" name="check1" value="f" />
+                      <label for="check2" id="check_list_label">아니오</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="check_list_TableHead1">check2</td>
+                    <td id="check_list_TableHead2">
+                      승객이 이용하는 좌석의 안전벨트는 이상 없습니까?
+                    </td>
+                    <td id="check_list_TableHead3">
+                      <input
+                        type="radio"
+                        id="check3"
+                        name="check2"
+                        value="t"
+                        checked
+                      />
+                      <label for="check3" id="check_list_label">예</label>
+                      <input type="radio" id="check4" name="check2" value="f" />
+                      <label for="check4" id="check_list_label">아니오</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="check_list_TableHead1">check3</td>
+                    <td id="check_list_TableHead2">
+                      타이어의 공기압은 32 ~ 34 사이 입니까?
+                    </td>
+                    <td id="check_list_TableHead3">
+                      <input
+                        type="radio"
+                        id="check5"
+                        name="check3"
+                        value="t"
+                        checked
+                      />
+                      <label for="check5" id="check_list_label">예</label>
+                      <input type="radio" id="check6" name="check3" value="f" />
+                      <label for="check6" id="check_list_label">아니오</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="check_list_TableHead1">check4</td>
+                    <td id="check_list_TableHead2">
+                      소화기는 구비되어 있습니까?
+                    </td>
+                    <td id="check_list_TableHead3">
+                      <input
+                        type="radio"
+                        id="check7"
+                        name="check4"
+                        value="t"
+                        checked
+                      />
+                      <label for="check7" id="check_list_label">예</label>
+                      <input type="radio" id="check8" name="check4" value="f" />
+                      <label for="check8" id="check_list_label">아니오</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td id="check_list_TableHead1">check5</td>
+                    <td id="check_list_TableHead2">
+                      기름은 80%이상 저장되어 있습니까?
+                    </td>
+                    <td id="check_list_TableHead3">
+                      <input
+                        type="radio"
+                        id="check9"
+                        name="check5"
+                        value="t"
+                        checked
+                      />
+                      <label for="check9" id="check_list_label">예</label>
+                      <input
+                        type="radio"
+                        id="check10"
+                        name="check5"
+                        value="f"
+                      />
+                      <label for="check10" id="check_list_label">아니오</label>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-12">
+                <textarea
+                  name="checketc"
+                  id="check_list_massage"
+                  placeholder="기타 사항"
+                  rows="10"
+                ></textarea>
+              </div>
+              <br />
+              <br />
+              <div id="check_list_button">
+                <ul class="actions">
+                  <li>
+                    <a
+                      class="button primary"
+                      id="check_list_button_ft"
+                      onclick="car_list()"
+                      >목록</a
+                    >
+                  </li>
+                  <li>
+                    <button
+                      type="submit"
+                      class="button"
+                      id="check_list_button_ft"
+                    >
+                      확인
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+
+      <%- include ("./sidebar.ejs") %>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

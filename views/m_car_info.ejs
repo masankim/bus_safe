@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Bus Safety System Check manager car info</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=아니오"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script>
+      function m_add_car_update(num) {
+        location.href = "/m_add_car_update/" + num;
+      }
+    </script>
+  </head>
+  <body class="is-preload" onload="menuload();">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+          <!-- Header -->
+          <header id="header">
+            <a href="/" class="logo"
+              >Bus <strong>Safety</strong> System</a
+            >
+            <ul class="icons">
+              <li>
+                <a href="#" class="icon brands fa-twitter"
+                  ><span class="label">Twitter</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-facebook-f"
+                  ><span class="label">Facebook</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-snapchat-ghost"
+                  ><span class="label">Snapchat</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-instagram"
+                  ><span class="label">Instagram</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-medium-m"
+                  ><span class="label">Medium</span></a
+                >
+              </li>
+            </ul>
+          </header>
+
+          <!-- Content -->
+          <section>
+            <form method="post" action="/confirm"></form>
+            <header class="main">
+              <h1 id="m_car_info_header">차량 상세 정보</h1>
+            </header>
+            <div id="m_car_info_division">
+              <span id="m_car_info_division1"
+                >차량 번호:<input
+                  name="car_id"
+                  value="<%=carlist[0].car_id%>"
+                  readonly /><strong></strong></span
+              ><span id="m_car_info_division2"
+                >차량 소속:<input
+                  name="car_id"
+                  value="<%=carlist[0].car_div%>"
+                  readonly />
+                <strong></strong
+              ></span>
+            </div>
+            <br />
+            <table class="alt">
+              <tr>
+                <td id="m_car_info_table">
+                  차량 번호
+                </td>
+                <td id="m_car_info_table2">
+                  <span><%=carlist[0].car_id%></span>
+                </td>
+                <td id="m_car_info_table">차량 종류</td>
+                <td id="m_car_info_table2">
+                  <span><%=carlist[0].car_type%></span>
+                </td>
+              </tr>
+              <tr>
+                <td id="m_car_info_table">차량 연식</td>
+                <td id="m_car_info_table2">
+                  <span><%=carlist[0].car_birth%></span>
+                </td>
+                <td id="m_car_info_table">최종 검사일</td>
+                <td id="m_car_info_table2">
+                  <span><%=carlist[0].car_birth%></span>
+                </td>
+              </tr>
+            </table>
+            <div class="col-12">
+              <textarea
+                name="demo-message"
+                id="m_car_info_massage"
+                placeholder="기타 사항"
+                rows="10"
+              ></textarea>
+            </div>
+            <br />
+            <br />
+            <div id="confirm_button">
+              <ul class="actions">
+                <li>
+                  <a
+                    class="button primary"
+                    id="confirm_button_ft"
+                    href="/m_car_info/delete/<%=carlist[0].car_id%>"
+                    >삭제</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="button"
+                    id="confirm_button_ft"
+                    onclick="m_add_car_update('<%=carlist[0].car_id%>');"
+                    >수정</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+      <%- include ("./sidebar.ejs") %>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

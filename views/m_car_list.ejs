@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Bus Safety System Car list</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script>
+      function m_add_car() {
+        location.href = "/m_add_car/";
+      }
+      function m_car_info(carnum) {
+        location.href = "/m_car_info/" + carnum;
+      }
+    </script>
+  </head>
+  <body class="is-preload" onload="menuload()">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+          <!-- Header -->
+          <header id="header">
+            <a href="/" class="logo"
+              >Bus <strong>Safety</strong> System</a
+            >
+            <ul class="icons">
+              <li>
+                <a href="#" class="icon brands fa-twitter"
+                  ><span class="label">Twitter</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-facebook-f"
+                  ><span class="label">Facebook</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-snapchat-ghost"
+                  ><span class="label">Snapchat</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-instagram"
+                  ><span class="label">Instagram</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-medium-m"
+                  ><span class="label">Medium</span></a
+                >
+              </li>
+            </ul>
+          </header>
+
+          <!-- Content -->
+          <section>
+            <header class="main">
+              <h1 id="m_car_list_header">매니저 - 차량 목록</h1>
+            </header>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th class="m_car_list_TableHead">차량 번호</th>
+                    <th class="m_car_list_TableHead">소속</th>
+                    <th class="m_car_list_TableHead">차량 종류</th>
+                    <th class="m_car_list_TableHead">연식</th>
+                    <th class="m_car_list_TableHead">최종 검사일</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for (var i=0;i < carlist.length;i++) {%>
+                  <tr onclick="m_car_info('<%=carlist[i].car_id%>')">
+                    <td class="m_car_list_TableHead"><%=carlist[i].car_id%></td>
+                    <td class="m_car_list_TableHead">
+                      <%=carlist[i].car_div%>
+                    </td>
+                    <td class="m_car_list_TableHead">
+                      <%=carlist[i].car_type%>
+                    </td>
+                    <td class="m_car_list_TableHead">
+                      <%=carlist[i].car_birth%>
+                    </td>
+                    <td class="m_car_list_TableHead">
+                      <%=carlist[i].car_day%>
+                    </td>
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
+              <div id="m_car_list_button">
+                <ul class="actions">
+                  <li>
+                    <a
+                      class="button primary"
+                      id="m_car_list_button_ft"
+                      onclick="m_add_car()"
+                      >추가</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <%- include ("./sidebar.ejs") %>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

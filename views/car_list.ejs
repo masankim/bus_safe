@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Bus Safety System Car list</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script>
+      function check_list(num) {
+        location.href = "/check_list/" + num;
+      }
+    </script>
+  </head>
+  <body class="is-preload" onload="menuload();">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+          <!-- Header -->
+          <header id="header">
+            <a class="logo" href="/">Bus <strong>Safety</strong> System</a>
+            <ul class="icons">
+              <li>
+                <a href="#" class="icon brands fa-twitter"
+                  ><span class="label">Twitter</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-facebook-f"
+                  ><span class="label">Facebook</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-snapchat-ghost"
+                  ><span class="label">Snapchat</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-instagram"
+                  ><span class="label">Instagram</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-medium-m"
+                  ><span class="label">Medium</span></a
+                >
+              </li>
+            </ul>
+          </header>
+
+          <!-- Content -->
+          <section>
+            <header class="main">
+              <h1 id="car_list_header">차량 목록</h1>
+            </header>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th class="list_TableHead">차량 번호</th>
+                    <th class="list_TableHead">소속</th>
+                    <th class="list_TableHead">차량 종류</th>
+                    <th class="list_TableHead">최종 검사일</th>
+                    <th class="list_TableHead">최종 결과</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!--for문-->
+                  <% for(var i=0; i< carlist.length; i++) { %>
+                  <tr onclick="check_list('<%=carlist[i].car_id%>')">
+                    <td class="list_TableHead"><%=carlist[i].car_id%></td>
+                    <td class="list_TableHead"><%=carlist[i].car_div%></td>
+                    <td class="list_TableHead"><%=carlist[i].car_type%></td>
+                    <td class="list_TableHead"><%=carlist[i].car_day%></td>
+                    <td class="list_TableHead"><%=carlist[i].var_result%></td>
+                  </tr>
+                  <% } %>
+                  <!--for문 끝-->
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <%- include ("./sidebar.ejs") %>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

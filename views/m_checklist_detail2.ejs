@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/m_checklist_detail2.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>버스안전점검시스템 - manager check-list detail2</title>
+    <script>
+      function logout() {
+        location.href = "/logout";
+      }
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header">버스안전점검시스템</div>
+      <div id="nav">
+        차량 번호: <%=carlist[0].car_id%>
+      </div>
+      <div id="article">
+        <div class="container" id="buttonContainer">
+          <table id="check_List">
+            <tr>
+              <td id="question">
+                승객이 이용하는 시설은 깨끗합니까?
+              </td>
+              <td id="question2">
+                <%if (carlist[0].check1 == 'y'){%> pass <%}else{%> non pass
+                <%}%>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <table id="check_List">
+            <tr>
+              <td id="question">
+                승객이 이용하는 좌석의 안전벨트는 이상 없습니까?
+              </td>
+              <td id="question2">
+                <%if (carlist[0].check2 == 'y'){%> pass <%}else{%> non pass
+                <%}%>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <table id="check_List">
+            <tr>
+              <td id="question">
+                타이어의 공기압은 32 ~ 34 사이 입니까?
+              </td>
+              <td id="question2">
+                <%if (carlist[0].check3 == 'y'){%> pass <%}else{%> non pass
+                <%}%>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <table id="check_List">
+            <tr>
+              <td id="question">
+                소화기는 구비되어 있습니까?
+              </td>
+              <td id="question2">
+                <%if (carlist[0].check4 == 'y'){%> pass <%}else{%> non pass
+                <%}%>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <table id="check_List">
+            <tr>
+              <td id="question">
+                기름은 80%이상 저장되어 있습니까?
+              </td>
+              <td id="question2">
+                <%if (carlist[0].check5 == 'y'){%> pass <%}else{%> non pass
+                <%}%>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <textarea id="etc" placeholder="기타 사항"></textarea>
+
+          <table id="checkerInfo">
+            <tr>
+              <td><input type="text" value="차량 소속" readonly /></td>
+              <td><input type="text" value="차량 종류" readonly /></td>
+            </tr>
+            <tr>
+              <td><input type="text" value="검사자 이름" readonly /></td>
+              <td><input type="text" value="검사 시간" readonly /></td>
+            </tr>
+          </table>
+          <br />
+          <table id="threeButton">
+            <tr>
+              <td>
+                <button type="button" class="btn btn-secondary" id="buttons">
+                  확인
+                </button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id="footer">
+        (주)버스안전점검
+        <p>
+          <button
+            type="button"
+            id="logOut"
+            class="btn btn-secondary"
+            onclick="logout()"
+          >
+            로그아웃
+          </button>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

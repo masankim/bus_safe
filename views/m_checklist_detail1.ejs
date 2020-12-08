@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Bus Safety System Check list</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=아니오"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script>
+      function m_check_list() {
+        location.href = "/m_check_list/";
+      }
+    </script>
+  </head>
+  <body class="is-preload" onload="menuload();">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+          <!-- Header -->
+          <header id="header">
+            <a href="/" class="logo"
+              >Bus <strong>Safety</strong> System</a
+            >
+            <ul class="icons">
+              <li>
+                <a href="#" class="icon brands fa-twitter"
+                  ><span class="label">Twitter</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-facebook-f"
+                  ><span class="label">Facebook</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-snapchat-ghost"
+                  ><span class="label">Snapchat</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-instagram"
+                  ><span class="label">Instagram</span></a
+                >
+              </li>
+              <li>
+                <a href="#" class="icon brands fa-medium-m"
+                  ><span class="label">Medium</span></a
+                >
+              </li>
+            </ul>
+          </header>
+
+          <!-- Content -->
+          <section>
+            <header class="main">
+              <h1 id="m_check_list_detail_header">매니저 - 검사 상세 내용</h1>
+            </header>
+            <div id="m_check_list_detail_division">
+              <span id="m_check_list_detail_division1"
+                >차량 번호:<strong><%=carnum%></strong></span
+              ><span id="m_check_list_detail_division2"
+                >차량 소속:<strong></strong
+              ></span>
+            </div>
+            <br />
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th class="m_check_list_detail_TableHead">검사 일</th>
+                    <th class="m_check_list_detail_TableHead">내용</th>
+                    <th class="m_check_list_detail_TableHead">검사 결과</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!--for문-->
+                  <%if (carlist.length == 0){ %>
+                  <tr>
+                    <td class="m_check_list_detail_TableHead" colspan="3">
+                      점검내역이 존재하지 않습니다.
+                    </td>
+                  </tr>
+                  <% } else { for(var i=0; i < carlist.length; i++){%>
+                  <tr>
+                    <td class="m_check_list_detail_TableHead">
+                      <%=carlist[i][4]%>
+                    </td>
+                    <td class="m_check_list_detail_TableHead">
+                      <%=carlist[i][3]%>
+                    </td>
+                    <td class="m_check_list_detail_TableHead">
+                      <%if (carlist[i][2] == 'ttttt'){%> pass <%} else {%>
+                      failure <%}%>
+                    </td>
+                  </tr>
+                  <%}}%>
+                  <!--for문 끝-->
+                </tbody>
+              </table>
+              <!--표시할 내용이 없을때 사용-->
+              <!-- <table>
+                <thead>
+                  <tr>
+                    <th class="m_check_list_detail_TableHead">검사 일</th>
+                    <th class="m_check_list_detail_TableHead">내용</th>
+                    <th class="m_check_list_detail_TableHead">검사 결과</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="m_check_list_detail_TableHead" colspan="3">
+                      표시할 내용이 없습니다.
+                    </td>
+                  </tr>
+                </tbody>
+              </table> -->
+            </div>
+            <br />
+            <br />
+            <div id="m_check_list_detail_button">
+              <ul class="actions">
+                <li>
+                  <a
+                    class="button"
+                    id="check_list_button_ft"
+                    onclick="m_check_list()"
+                    >확인</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <%- include ("./sidebar.ejs") %>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

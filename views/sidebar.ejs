@@ -1,0 +1,49 @@
+<script language="javascript">
+  function logout() {
+    location.href = "/logout";
+  }
+  function menuload() {
+    let time = new Date();
+    
+    document.getElementById("menu").innerHTML =
+      "<header class='major'><h2>User</h2></header>환영합니다!<br /><br /><div>이름 : " +
+      "<%=userlist[0].name%>" +
+      "<br /><br />소속 : " +
+      "<%=userlist[0].division%>" +
+      "<br /><br /><a href='/logout'><button type='button >log out</button></a></div>";
+      
+  }
+</script>
+
+<!-- Sidebar -->
+<div id="sidebar">
+  <div class="inner">
+    <!-- Search -->
+    <section id="search" class="alt">
+      <form method="post" action="#">
+        <input type="text" name="query" id="query" placeholder="Search" />
+      </form>
+    </section>
+
+    <!-- Menu -->
+    <nav id="menu"></nav>
+    <!-- Footer -->
+    <footer id="footer">
+      <section>
+        <ul class="contact">
+          <li class="icon solid fa-envelope">
+            bus_ta@gmail.com
+          </li>
+          <li class="icon solid fa-phone">(02) 123-4567</li>
+          <li class="icon solid fa-home">
+            서울특별시 서초구 서초중앙로63,
+            <br />리더스빌딩 5층 <br />(06651)
+          </li>
+        </ul>
+      </section>
+      <p class="copyright">
+        &copy; International KBCI 2020
+      </p>
+    </footer>
+  </div>
+</div>
